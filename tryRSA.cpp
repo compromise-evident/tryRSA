@@ -65,6 +65,8 @@ int main()
 	}
 	in_stream.close();
 	
+	//Sets appropriate digit length of candidate factor. (If semiprime
+	//length is even, then half. If semiprime length is odd, then half + 0.5)
 	int candidate_factor_digit_length = (semiprime_digit_length / 2);
 	if((semiprime_digit_length % 2) == 1) {candidate_factor_digit_length++;}
 	
@@ -94,32 +96,30 @@ int main()
 	mpz_set_str(dividend, semiprime, 10);
 	
 	for(;;)
-	{	//Modifies candidate_factor.
+	{	//..........Modifies candidate_factor.
 		int random_index = (rand() % candidate_factor_digit_length);
 		int random_value = (rand() % 10                           );
 		candidate_factor[random_index] = (random_value + 48);
 		
-		//Adjusts candidate_factor.
+		//..........Ensures candidate factor ends in 1, 3, 7, or 9, and does not begin with 0.
 		if(candidate_factor[                                0] == '0') {candidate_factor[                                0] = '1';}
 		if(candidate_factor[candidate_factor_digit_length - 1] == '0') {candidate_factor[candidate_factor_digit_length - 1] = '1';}
 		if(candidate_factor[candidate_factor_digit_length - 1] == '2') {candidate_factor[candidate_factor_digit_length - 1] = '3';}
 		if(candidate_factor[candidate_factor_digit_length - 1] == '4') {candidate_factor[candidate_factor_digit_length - 1] = '7';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '6') {candidate_factor[candidate_factor_digit_length - 1] = '9';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '8') {candidate_factor[candidate_factor_digit_length - 1] = '1';}
+		if(candidate_factor[candidate_factor_digit_length - 1] == '5') {candidate_factor[candidate_factor_digit_length - 1] = '9';}
+		if(candidate_factor[candidate_factor_digit_length - 1] == '6') {candidate_factor[candidate_factor_digit_length - 1] = '1';}
+		if(candidate_factor[candidate_factor_digit_length - 1] == '8') {candidate_factor[candidate_factor_digit_length - 1] = '3';}
 		
 		//..........Mod operation.
 		mpz_set_str(divisor, candidate_factor, 10);
 		mpz_mod(remainder, dividend, divisor);
 		
-		//..........Checks if remainder is zero.
+		//..........Stops if remainder is zero.
 		int zero = 0;
 		mpz_set_si(wanted_remainder, zero);
 		int comparison_of_wanted_remainder_with_zero = mpz_cmp(wanted_remainder, remainder);
 		if(comparison_of_wanted_remainder_with_zero == 0)
-		{	cout << "\nFactored! Prime saved to file on\n";
-			system("date");
-			
-			//..........Writes factor to file.
+		{	//..........Appends "-FACTOR" to file name.
 			path_to_file[path_to_file_null_bookmark     ] = '-';
 			path_to_file[path_to_file_null_bookmark +  1] = 'F';
 			path_to_file[path_to_file_null_bookmark +  2] = 'A';
@@ -128,9 +128,20 @@ int main()
 			path_to_file[path_to_file_null_bookmark +  5] = 'O';
 			path_to_file[path_to_file_null_bookmark +  6] = 'R';
 			
+			//..........Writes factor to file.
 			out_stream.open(path_to_file);
 			for(int a = 0; a < candidate_factor_digit_length; a++) {out_stream.put(candidate_factor[a]);}
 			out_stream.close();
+			
+			//..........Prints factor if 400 digits or less.
+			cout << "\n";
+			system("date");
+			cout << "Factored! Prime saved to file";
+			if(candidate_factor_digit_length <= 400)
+			{	cout << ":\n\n";
+				for(int a = 0; a < candidate_factor_digit_length; a++) {cout << candidate_factor[a];}
+			}
+			else {cout << ".\n\n";}
 			
 			return 0;
 		}
