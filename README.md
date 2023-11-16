@@ -22,4 +22,4 @@ Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
 
 Currently, srand() eats time(0) which is Unix time. Make sure that either,
 each instance begins at a unique second of time in relation to time(0),
-or simply feed srand() any unique unsigned int.
+or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967,295.
