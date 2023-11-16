@@ -58,7 +58,7 @@ int main()
 	
 	in_stream.open(path_to_file);
 	in_stream.get(garbage_byte);
-	for(int a = 0; in_stream.eof() == false && garbage_byte != '\n' && garbage_byte != ' '; a++)
+	for(int a = 0; in_stream.eof() == false && garbage_byte >= 48 && garbage_byte <= 57; a++)
 	{	semiprime[a] = garbage_byte;
 		in_stream.get(garbage_byte);
 		semiprime_digit_length++;
@@ -95,20 +95,18 @@ int main()
 	
 	mpz_set_str(dividend, semiprime, 10);
 	
+	int temp = (candidate_factor_digit_length - 1);
 	for(;;)
-	{	//..........Modifies candidate_factor.
+	{	//..........Modifies candidate_factor and ensures it does not begin with 0, and that it ends in 1, 3, 7, or 9.
 		int random_index = (rand() % candidate_factor_digit_length);
-		int random_value = (rand() % 10                           );
-		candidate_factor[random_index] = (random_value + 48);
 		
-		//..........Ensures candidate factor ends in 1, 3, 7, or 9, and does not begin with 0.
-		if(candidate_factor[                                0] == '0') {candidate_factor[                                0] = '1';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '0') {candidate_factor[candidate_factor_digit_length - 1] = '1';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '2') {candidate_factor[candidate_factor_digit_length - 1] = '3';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '4') {candidate_factor[candidate_factor_digit_length - 1] = '7';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '5') {candidate_factor[candidate_factor_digit_length - 1] = '9';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '6') {candidate_factor[candidate_factor_digit_length - 1] = '1';}
-		if(candidate_factor[candidate_factor_digit_length - 1] == '8') {candidate_factor[candidate_factor_digit_length - 1] = '3';}
+		     if(random_index ==    0) {candidate_factor[           0] = ((rand() %  9) + 49);}
+		else if(random_index  < temp) {candidate_factor[random_index] = ((rand() % 10) + 48);}
+		else
+		{	candidate_factor[temp] = (rand() %  4);
+			if((candidate_factor[temp] % 2) == 0) {candidate_factor[temp] += 7;}
+			candidate_factor[temp] += 48;
+		}
 		
 		//..........Mod operation.
 		mpz_set_str(divisor, candidate_factor, 10);
