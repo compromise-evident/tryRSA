@@ -103,7 +103,7 @@ int main()
 		     if(random_index ==    0) {candidate_factor[           0] = ((rand() %  9) + 49);}
 		else if(random_index  < temp) {candidate_factor[random_index] = ((rand() % 10) + 48);}
 		else
-		{	candidate_factor[temp] = (rand() %  4);
+		{	candidate_factor[temp] = (rand() % 4);
 			if((candidate_factor[temp] % 2) == 0) {candidate_factor[temp] += 7;}
 			candidate_factor[temp] += 48;
 		}
