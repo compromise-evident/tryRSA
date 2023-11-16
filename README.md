@@ -20,5 +20,6 @@ Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
 
 # Distributed effort
 
-Currently, srand() eats time(0) which is Unix time. Make sure each instance
-begins at a unique second of time, or simply feed srand() any unique unsigned int.
+Currently, srand() eats time(0) which is Unix time. Make sure that either,
+each instance begins at a unique second of time, or simply feed srand()
+any unique unsigned int.
