@@ -13,4 +13,4 @@ Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_28e98225f8fb1a15978bbd3db90098b85eb7115d5bd53a10ba22b372f01dfe9e.png">
 </p>
 
-[Auditing in the browser?](https://coliru.stacked-crooked.com/a/212c97b353eb143d)
+[Auditing in the browser?](https://coliru.stacked-crooked.com/a/ed4fcd0c40158487)
