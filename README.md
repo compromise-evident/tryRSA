@@ -14,3 +14,10 @@ Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
 </p>
 
 [Auditing in the browser?](https://coliru.stacked-crooked.com/a/ed4fcd0c40158487)
+
+<br>
+<br>
+
+# Distributed effort
+
+Currently, srand() eats time(0) which is Unix time. Make sure each instance begins at a unique second of time.
