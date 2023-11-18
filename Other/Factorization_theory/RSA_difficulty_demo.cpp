@@ -1,14 +1,14 @@
-/* Exposing that it seems impossible to know any  semiprime factor digit  unless
-the whole factor is known. This tool prints all possible ways two numbers can be
-multiplied in order to recreate some last few digits of your semiprime. It's not
-possible to eliminate any factorization possibilities  because the multiplicands
+/* Prints which two numbers multiplied recreate n last digits of your semiprime.
+Increase the number of semiprime digits you want recreated.  Listed p*q are the
+plausible ending digits of the factors.  Modify semiprime ending digits as well.
+
+
+It seems impossible to know any semiprime factor digit, unless you have a factor
+whole.  You cannot eliminate  any factor (plaus)ibilities because  multiplicands
 and multipliers listed are simply all numbers ending in 1, 3, 7, 9. For example,
 given the last few digits of semiprime pq,  primes p are listed as every integer
 1+ but ending in 1, 3, 7, & 9  (as primes should, other than 2 & 5.) Now, for q,
-the same numbers are listed verbatim as multipliers for p, in a different order.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-It seems RSA has the perfect secrecy-like nature of the  One-time pad's  all-way
-function. As if RSA starts at a One-time pad then takes steps down from there.*/
+the same exact numbers are listed as multipliers for p, in a different order. */
 
 
 #include <iostream>
@@ -30,7 +30,7 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	long long   last_few_digits_of_your_semiprime = 423446789015381147; //Must end in 1, 3, 7, 9
-	long long    number_of_ending_digits_to_crack =                  5; //Range: 1+     <------------------------Begin at 1 and increase!
+	long long    number_of_ending_digits_to_crack =                  5; //          <------------------------Begin at 1 and increase!
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -105,3 +105,42 @@ int main()
 	     << "\nsum(all p) = " << p_duplicate_watch 
 	     << "\nsum(all q) = " << q_duplicate_watch;
 }
+
+
+
+
+
+/*#######*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
+#####'`                                                                  `'#####
+###'                              TLDR: run it                              '###
+##                                                                            ##
+#,                                                                            ,#
+#'                              apt install g++                               '#
+##                           g++ /path/this_file.cpp                          ##
+###,                          /path/resulting_file                          ,###
+#####,.                                                                  .,#####
+##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#######*/
+
+/*How to alter this code - Software package repositories for GNU+Linux operating
+systems have all the tools you can imagine. Open a terminal and use this command
+as root to install Geany and g++ on your computer: apt install geany g++   Geany
+is a fast & lightweight text editor and Integrated Development Environment where
+you can write and run code. g++ is the GNU compiler for C++  (industry standard)
+which creates an executable file out of written code. It also displays errors in
+code as you will see in the lower Geany box. Make a new folder somewhere on your
+machine. Paste this code into Geany. For clarity in auditing, enable indentation
+guides: go to View >> Show Indentation Guides. Save the document as anything.cpp
+within the newly-created folder. Use these shortcuts to run the program: F9, F5.
+Once  F9  is used, it needs not be used again unless you had modified this code.
+You may paste over this code with other  .cpp files, or open a new tab & repeat.
+Additionally, executables created by the  F9  command can be drag & dropped into
+terminals (lazy directory pasting) so the executable can run.  exe is in folder.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to make an executable with g++  -  Save this program as anything.cpp, open a
+terminal, and type g++ then space. Drag & drop this saved file into the terminal
+and its directory will be  appended to your pending entry. Click on the terminal
+and press enter.   a.out now resides in the user directory, you may rename it to
+anything.  To run that executable, simply drag and drop it into a terminal, then
+click on the terminal and press enter.  Reminder:  executable's effect-directory
+is /home/user or where you put the executable. Opening  .cpp  files in Geany and
+hitting F9 creates the same executable--movable, renameable, drag & droppable.*/
