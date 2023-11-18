@@ -29,8 +29,8 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	long long   last_few_digits_of_your_semiprime = 423446789015381247; //Must end in 1, 3, 7, 9
-	long long    number_of_ending_digits_to_crack =                  1; //Range: 1+     <------------------------Increase him! Slowly!
+	long long   last_few_digits_of_your_semiprime = 423446789015381147; //Must end in 1, 3, 7, 9
+	long long    number_of_ending_digits_to_crack =                  5; //Range: 1+     <------------------------Begin at 1 and increase!
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -66,7 +66,27 @@ int main()
 					product %= number_of_ending_digits_via_mod;
 					
 					if(product == last_few_digits_of_your_semiprime)
-					{	cout << "Factorization possibility " << quantity << ":   " << p << " * " << q << " mod " << number_of_ending_digits_via_mod << " = " << product << "\n";
+					{	long long max_length_reference = (number_of_ending_digits_via_mod - 1);
+						max_length_reference /= 10;
+						
+						cout << "possibility_";
+						for(int temp = max_length_reference, a = 0; a < (number_of_ending_digits_to_crack - 1); a++)
+						{	if(quantity <= temp) {cout << "_";}
+							temp /= 10;
+						}
+						cout << quantity << ":    ";
+						
+						for(int temp = max_length_reference, a = 0; a < (number_of_ending_digits_to_crack - 1); a++)
+						{	if(p <= temp) {cout << " ";}
+							temp /= 10;
+						}
+						cout << p << " * ";
+						
+						for(int temp = max_length_reference, a = 0; a < (number_of_ending_digits_to_crack - 1); a++)
+						{	if(q <= temp) {cout << " ";}
+							temp /= 10;
+						}
+						cout << q << "    = ..." << product << " (semiprime)\n";
 						
 						p_duplicate_watch += p;
 						q_duplicate_watch += q;
