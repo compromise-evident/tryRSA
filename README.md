@@ -32,6 +32,10 @@ or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967
 Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp)
 (prints which two numbers multiplied recreate n last digits of your semiprime.)
 
+[Increase](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp#L33)
+the number of digits you want recreated. Multiplicands and multipliers listed
+are all the plausible ending digits of the prime factors.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Terminal_a0f8d87dcaa7faa13a8066d6749b5dfc8758ce90d017e94fc0b52237a5719c1e.png">
 </p>
