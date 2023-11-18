@@ -18,7 +18,7 @@ Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
 <br>
 <br>
 
-# Distributed effort (multi-instance)
+# Distributed effort
 
 Currently, srand() eats time(0) which is Unix time. Make sure that either,
 each instance begins at a unique second of time in relation to time(0),
@@ -30,7 +30,7 @@ or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967
 # Semiprimes have perfect-secrecy-like nature
 
 Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp)
-as it prints all the possible ways two numbers can be multiplied to recreate some last few digits of your semiprime.
+(prints what two numbers multiplied recreate n last few digits of your semiprime.)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Terminal_a0f8d87dcaa7faa13a8066d6749b5dfc8758ce90d017e94fc0b52237a5719c1e.png">
