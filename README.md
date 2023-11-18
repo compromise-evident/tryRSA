@@ -27,7 +27,7 @@ or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967
 <br>
 <br>
 
-# Semiprimes appear to have perfect-secrecy-like nature
+# Semiprimes may have perfect-secrecy-like nature
 
 Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp)
 as it prints all the possible ways two numbers can be multiplied to recreate some last few digits of your semiprime.
