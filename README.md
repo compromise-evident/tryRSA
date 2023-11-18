@@ -30,7 +30,7 @@ or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967
 # Semiprimes have perfect-secrecy-like nature
 
 Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp)
-(prints what two numbers multiplied recreate n last digits of your semiprime.)
+(prints which two numbers multiplied recreate n last digits of your semiprime.)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Terminal_a0f8d87dcaa7faa13a8066d6749b5dfc8758ce90d017e94fc0b52237a5719c1e.png">
