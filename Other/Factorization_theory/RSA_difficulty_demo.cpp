@@ -11,7 +11,6 @@ It seems RSA has the perfect secrecy-like nature of the  One-time pad's  all-way
 function. As if RSA starts at a One-time pad then takes steps down from there.*/
 
 
-#include <fstream>
 #include <iostream>
 using namespace std;
 
