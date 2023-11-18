@@ -6,7 +6,7 @@ Attempt factorization of 100-100k-digit semiprimes used in cryptography.
 
 Requirement: GNU Multiple Precision Arithmetic Library.
 Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
-commands in Geany, or then compile using ```g++ /path_to/ProximitySieve.cpp -lgmp```
+commands in Geany, or then compile using ```g++ /path_to/tryRSA.cpp -lgmp```
 
 <br>
 <br>
