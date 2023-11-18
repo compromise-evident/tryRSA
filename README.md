@@ -33,7 +33,7 @@ Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA
 (prints which two numbers multiplied recreate n last digits of your semiprime.)
 
 [Increase](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp#L33)
-the number of digits you want recreated. Multiplicands and multipliers listed
+the number of digits you want recreated. Multipliers listed
 are all the plausible ending digits of the prime factors.
 
 <p align="center">
