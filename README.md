@@ -20,11 +20,9 @@ commands in Geany, or then compile using ```g++ /path_to/tryRSA.cpp -lgmp```
 <br>
 <br>
 
-# Distributed effort
+# Distributed-effort-friendly
 
-Currently, srand() eats time(0) which is Unix time. Make sure that either,
-each instance begins at a unique second of time in relation to time(0),
-or simply feed srand() any unique unsigned int. That's a range of 0 to 4,294,967,295.
+srand() eats RAM garbage and time(0). No instance duplicates effort.
 
 <br>
 <br>
