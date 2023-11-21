@@ -1,4 +1,5 @@
-/// tryRSA - attempt factorization of 100-100k-digit semiprimes used in cryptography.
+/// tryRSA - attempt factorization of 100-100k-digit semiprimes used in
+///          cryptography. Curated for hands-free distributed effort.
 /// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
 
 
