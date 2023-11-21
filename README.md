@@ -1,5 +1,6 @@
 <!--
-Attempt factorization of 100-100k-digit semiprimes used in cryptography.
+Attempt factorization of 100-100k-digit semiprimes used in
+cryptography. Curated for hands-free distributed effort.
 -->
 
 
@@ -16,13 +17,6 @@ commands in Geany, or then compile using ```g++ /path_to/tryRSA.cpp -lgmp```
 </p>
 
 [Auditing in the browser?](https://coliru.stacked-crooked.com/a/ed4fcd0c40158487)
-
-<br>
-<br>
-
-# Distributed-effort-friendly
-
-srand() eats RAM garbage + time(0). No instance duplicates effort.
 
 <br>
 <br>
