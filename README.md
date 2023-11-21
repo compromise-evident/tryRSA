@@ -13,7 +13,7 @@ commands in Geany, or then compile using ```g++ /path_to/tryRSA.cpp -lgmp```
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_28e98225f8fb1a15978bbd3db90098b85eb7115d5bd53a10ba22b372f01dfe9e.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_3efa9701225cdf16a4d3355fe645531f3dcda95d2bc5766d98ef9a5c6235f6d4.png">
 </p>
 
 [Auditing in the browser?](https://coliru.stacked-crooked.com/a/2793354601d81c64)
