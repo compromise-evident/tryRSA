@@ -2,77 +2,69 @@
 /// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
 
 
-/* Version 1.0.0
-Only one randomly-chosen  digit is changed at a time (on the  candidate factor.)
-Actually, lower limit semiprime length is 3 digits.  Run-times always differ. */
+// Version 2.0.0
 
 #include <fstream>
-#include <gmp.h> //For GMP
-//(GNU Multiple Precision Arithmetic Library)
-//To get GMP running, do apt install libgmp-dev
-//then append "-lgmp" to both compile & build commands.
+#include <gmp.h> //For GNU Multiple Precision Arithmetic Library.
+//Do apt install libgmp-dev then append "-lgmp" to both compile &
+//build commands. Or then compile: g++ /path_to_tryRSA.cpp -lgmp
 #include <iostream>
 using namespace std;
 
 int main()
-{	ifstream in_stream;
+{	//                               user knobs
+	
+	/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  /////////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    ////////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\      ///////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\        //////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\            ////////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\              ///////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\                  /////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\                      ///////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
+	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
+	
+	char semiprime[100001] = {"22112825529529666435281085255026230927612089502470015394413748319128822941402001986512729726569746599085900330031400051170742204560859276357953757185954298838958709229238491006703034124620545784566413664540684214361293017694020846391065875914794251435144458199"};
+	//You may replace this semiprime (RSA-260 challenge.) Range: 3-100k digits.
+	//Try the 18-digit semiprime: 344542676882192473 = 392762459 × 877229147.
+	
+	/*////////////////                                        \\\\\\\\\\\\\\\\\\
+	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
+	///////////////////////////                      \\\\\\\\\\\\\\\\\\\\\\\\\\\
+	/////////////////////////////                  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	///////////////////////////////              \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	////////////////////////////////            \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	//////////////////////////////////        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	///////////////////////////////////      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	////////////////////////////////////    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	/////////////////////////////////////  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	//////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+	
 	ofstream out_stream;
 	
-	//Gets path to file from user.
-	cout << "\nPlace the 100-100k-digit semiprime in a file."
-	     << "\nDrag & drop file into terminal or enter path:\n";
-	
-	char  path_to_file[10000] = {'\0'};
-	cin.getline(path_to_file, 10000);
-	if(path_to_file[0] == '\0') {cout << "\nNo path given.\n"; return 0;}
-	
-	//Fixes path to file if drag & dropped (removes single quotes for ex:)   '/home/nikolay/my documents/RSA-260'
-	if(path_to_file[0] == '\'')
-	{	for(int a = 0; a < 10000; a++)
-		{	path_to_file[a] = path_to_file[a + 1];
-			if(path_to_file[a] == '\'')
-			{	path_to_file[a    ] = '\0';
-				path_to_file[a + 1] = '\0';
-				path_to_file[a + 2] = '\0';
-				break;
-			}
-		}
-	}
-	
-	//Checks if file exists (failure can be bad path info as well.)
-	in_stream.open(path_to_file);
-	if(in_stream.fail() == true) {in_stream.close(); cout << "\n\nNo such file or directory.\n";             return 0;}
-	char sniffed_one_file_character;
-	in_stream.get(sniffed_one_file_character);
-	if(in_stream.eof() == true) {in_stream.close();  cout << "\n\nNothing to process, the file is empty.\n"; return 0;}
-	in_stream.close();
-	
-	//Gets location of the first encountered end-null coming from the left in path_to_file[].
-	int path_to_file_null_bookmark;
-	for(int a = 0; a < 10000; a++) {if(path_to_file[a] == '\0') {path_to_file_null_bookmark = a; break;}}
-	
-	//Gets the semiprime from file.
-	char semiprime[100001] = {'\0'};
-	char garbage_byte;
+	//Finds semiprime digit length.
 	int semiprime_digit_length = 0;
-	
-	in_stream.open(path_to_file);
-	in_stream.get(garbage_byte);
-	for(int a = 0; in_stream.eof() == false && garbage_byte >= 48 && garbage_byte <= 57; a++)
-	{	semiprime[a] = garbage_byte;
-		in_stream.get(garbage_byte);
-		semiprime_digit_length++;
-	}
-	in_stream.close();
+	for(int a = 0; semiprime[a] != '\0'; a++) {semiprime_digit_length++;}
 	
 	//Sets appropriate digit length of candidate factor. (If semiprime
 	//length is even, then half. If semiprime length is odd, then half + 0.5)
 	int candidate_factor_digit_length = (semiprime_digit_length / 2);
 	if((semiprime_digit_length % 2) == 1) {candidate_factor_digit_length++;}
 	
+	//Sets a seed based on RAM garbage and Unix time. (Good for duplicate-free multi-instance.)
+	unsigned int RAM_garbage[100000];
+	long long seed_based_on_RAM_garbage_and_Unix_time = time(0);
+	for(int a = 0; a < 100000; a++)
+	{	seed_based_on_RAM_garbage_and_Unix_time += RAM_garbage[a];
+		seed_based_on_RAM_garbage_and_Unix_time %= 4294967296;
+	}
+	unsigned int final_seed = seed_based_on_RAM_garbage_and_Unix_time;
+	srand(final_seed);
+	
 	//Creates a random candidate factor (to be modified automatically.)
 	char candidate_factor[50001] = {'\0'};
-	srand(time(0));
 	for(int a = 0; a < candidate_factor_digit_length; a++)
 	{	candidate_factor[a] = (rand() % 10);
 		candidate_factor[a] += 48;
@@ -92,12 +84,15 @@ int main()
 	mpz_t divisor         ; mpz_init(divisor         );
 	mpz_t remainder       ; mpz_init(remainder       );
 	mpz_t wanted_remainder; mpz_init(wanted_remainder);
+	int zero = 0;
 	
+	mpz_set_si(wanted_remainder, zero);
 	mpz_set_str(dividend, semiprime, 10);
 	
 	int temp = (candidate_factor_digit_length - 1);
 	for(;;)
 	{	//..........Modifies candidate_factor and ensures it does not begin with 0, and that it ends in 1, 3, 7, or 9.
+		//..........Only one randomly-chosen digit is changed at a time (on the candidate factor.)
 		int random_index = (rand() % candidate_factor_digit_length);
 		
 		     if(random_index ==    0) {candidate_factor[           0] = ((rand() %  9) + 49);}
@@ -113,21 +108,10 @@ int main()
 		mpz_mod(remainder, dividend, divisor);
 		
 		//..........Stops if remainder is zero.
-		int zero = 0;
-		mpz_set_si(wanted_remainder, zero);
 		int comparison_of_wanted_remainder_with_zero = mpz_cmp(wanted_remainder, remainder);
 		if(comparison_of_wanted_remainder_with_zero == 0)
-		{	//..........Appends "-FACTOR" to file name.
-			path_to_file[path_to_file_null_bookmark     ] = '-';
-			path_to_file[path_to_file_null_bookmark +  1] = 'F';
-			path_to_file[path_to_file_null_bookmark +  2] = 'A';
-			path_to_file[path_to_file_null_bookmark +  3] = 'C';
-			path_to_file[path_to_file_null_bookmark +  4] = 'T';
-			path_to_file[path_to_file_null_bookmark +  5] = 'O';
-			path_to_file[path_to_file_null_bookmark +  6] = 'R';
-			
-			//..........Writes factor to file.
-			out_stream.open(path_to_file);
+		{	//..........Writes factor to file.
+			out_stream.open("FACTOR");
 			for(int a = 0; a < candidate_factor_digit_length; a++) {out_stream.put(candidate_factor[a]);}
 			out_stream.close();
 			
