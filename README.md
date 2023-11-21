@@ -22,7 +22,7 @@ commands in Geany, or then compile using ```g++ /path_to/tryRSA.cpp -lgmp```
 
 # Distributed-effort-friendly
 
-srand() eats RAM garbage and time(0). No instance duplicates effort.
+srand() eats RAM garbage + time(0). No instance duplicates effort.
 
 <br>
 <br>
