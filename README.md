@@ -16,7 +16,7 @@ commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp```
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_3efa9701225cdf16a4d3355fe645531f3dcda95d2bc5766d98ef9a5c6235f6d4.png">
 </p>
 
-[Auditing in the browser?](https://coliru.stacked-crooked.com/a/2793354601d81c64)
+[Auditing in the browser?](https://coliru.stacked-crooked.com/a/ff2f3014f5a4faa1)
 
 <br>
 <br>
