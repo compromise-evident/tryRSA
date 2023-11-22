@@ -8,7 +8,7 @@
 #include <fstream>
 #include <gmp.h> //For GNU Multiple Precision Arithmetic Library.
 //Do apt install libgmp-dev then append "-lgmp" to both compile &
-//build commands. Or then compile: g++ /path_to_tryRSA.cpp -lgmp
+//build commands. Or then compile: g++ /path_to_this.cpp -lgmp
 #include <iostream>
 using namespace std;
 
