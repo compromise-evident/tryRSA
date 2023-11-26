@@ -40,3 +40,15 @@ are the plausible ending digits of the factors.
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Closer_look_at_18-digit_semiprime_840a1c7c2325b815413b269b7635c43a0442b48a6f7eb8ff23e460b7e023dee3.png">
 </p>
+
+<br>
+<br>
+
+# Semiprime factorization IRL
+
+This is string of length pq. Once the string reaches B, AND if A & B are
+integer-apart, then p = distance  A ➡️ B, q = segment quantity, and you've factored pq.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/String_folding_279cdc202129ed49fb5e4a27af50c18f5a1dc8af793d5d6dff7d3e0d8332155e.png">
+</p>
