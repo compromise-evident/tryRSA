@@ -46,7 +46,7 @@ are the plausible ending digits of the factors.
 
 # Semiprime factorization IRL
 
-String length = pq. If string end is at B, if A & B are integer-apart, then p = distance A to B, q = segment quantity.
+String length = pq. If string end is at B, and if A & B are integer-apart, then p = distance A to B, q = segment quantity.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/String_folding_279cdc202129ed49fb5e4a27af50c18f5a1dc8af793d5d6dff7d3e0d8332155e.png">
