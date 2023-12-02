@@ -30,7 +30,7 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	long long   last_few_digits_of_your_semiprime = 423446789015381147; //Must end in 1, 3, 7, 9
-	long long    number_of_ending_digits_to_crack =                  5; //          <------------------------Begin at 1 and increase!
+	long long    number_of_ending_digits_to_crack =                  4; //          <------------------------Begin at 1 and increase!
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -74,23 +74,25 @@ int main()
 						{	if(quantity <= temp) {cout << "_";}
 							temp /= 10;
 						}
-						cout << quantity << ":    ";
+						cout << quantity << ":     ...";
 						
 						for(int temp = max_length_reference, a = 0; a < (number_of_ending_digits_to_crack - 1); a++)
-						{	if(p <= temp) {cout << " ";}
+						{	if(p <= temp) {cout << "0";}
 							temp /= 10;
 						}
-						cout << p << " * ";
+						cout << p << " * ...";
 						
 						for(int temp = max_length_reference, a = 0; a < (number_of_ending_digits_to_crack - 1); a++)
-						{	if(q <= temp) {cout << " ";}
+						{	if(q <= temp) {cout << "0";}
 							temp /= 10;
 						}
-						cout << q << "    = ..." << product << " (semiprime)\n";
+						cout << q << "     = ..." << product << " (semiprime)\n";
 						
 						p_duplicate_watch += p;
 						q_duplicate_watch += q;
 						quantity++;
+						
+						break;
 					}
 				}
 			}
@@ -101,7 +103,8 @@ int main()
 	
 	cout << "\n\n\nQuantity is always 4*10^n because 40% of numbers end in 1, 3, 7, 9."
 	     << "\n\n~Half are duplicates, as in a*b and b*a."
-	     << "\n\nInterestingly, sums are always 2*10^n and always equal:"
+	     << "\n\np and q sums are always 2*10^n, equal, and"
+	     << "\ntwice the digit length of possibilities;"
 	     << "\nsum(all p) = " << p_duplicate_watch 
 	     << "\nsum(all q) = " << q_duplicate_watch;
 }
