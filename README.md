@@ -44,7 +44,7 @@ are the plausible ending digits of the factors.
 <br>
 <br>
 
-# Semiprime factorization IRL
+# Physical semiprime factorization
 
 String length = pq. If string end is at B, and if A & B are integer-apart, then p = distance A to B, q = segment quantity.
 
