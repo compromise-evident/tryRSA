@@ -1,10 +1,3 @@
-<!--
-Attempt factorization of 100-100k-digit semiprimes used in
-cryptography. Curated for hands-free distributed effort.
--->
-
-
-
 Requirement: GNU Multiple Precision Arithmetic Library.
 Just do ```apt install libgmp-dev``` then append "-lgmp" to both compile & build
 commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp```
@@ -15,8 +8,6 @@ commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp```
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_3efa9701225cdf16a4d3355fe645531f3dcda95d2bc5766d98ef9a5c6235f6d4.png">
 </p>
-
-[Auditing in the browser?](https://coliru.stacked-crooked.com/a/ff2f3014f5a4faa1)
 
 <br>
 <br>
