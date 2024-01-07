@@ -1,0 +1,9 @@
+tryRSA
+
+
+
+Version 2.0.0   No file input,  RNG is duplicate-free,  good for multi-instance.
+                Nov 20 2023
+
+Version 1.0.0   Quite efficient for an  algorithm with random candidate factors.
+                Nov 14 2023
