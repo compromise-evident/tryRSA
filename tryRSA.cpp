@@ -1,14 +1,22 @@
 /// tryRSA - attempt factorization of 100-100k-digit semiprimes used in
-///          cryptography. Curated for hands-free distributed effort.
-/// Nikolay Valentinovich Repnitskiy - License: WTFPLv2+ (wtfpl.net)
+///          cryptography. Curated for hands-free distributed effort;
+///          randomness sprouts from garbage RAM and Unix time.
 
 
-// Version 2.0.0
+/* Version 2.0.0
+#########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
+#####'`                                                                  `'#####
+###'                                                                        '###
+##         You'll need the GNU Multiple Precision Arithmetic Library.         ##
+#,                                                                            ,#
+#'       Do apt install libgmp-dev then append "-lgmp" to both compile &      '#
+##        build commands. Or then compile: g++ /path_to_this.cpp -lgmp        ##
+###,                                                                        ,###
+#####,.                                                                  .,#####
+##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#######*/
 
 #include <fstream>
-#include <gmp.h> //For GNU Multiple Precision Arithmetic Library.
-//Do apt install libgmp-dev then append "-lgmp" to both compile &
-//build commands. Or then compile: g++ /path_to_this.cpp -lgmp
+#include <gmp.h> //For GMP.
 #include <iostream>
 using namespace std;
 
@@ -28,8 +36,8 @@ int main()
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	char semiprime[100001] = {"22112825529529666435281085255026230927612089502470015394413748319128822941402001986512729726569746599085900330031400051170742204560859276357953757185954298838958709229238491006703034124620545784566413664540684214361293017694020846391065875914794251435144458199"};
-	//You may replace this semiprime (RSA-260 challenge.) Range: 3-100k digits.
-	//Try the 18-digit semiprime: 344542676882192473 = 392762459 × 877229147.
+	//You may replace this semiprime (RSA-260 challenge.)  Range: 3-100k digits.
+	//Try the 18-digit semiprime: 344542676882192473    = 392762459 × 877229147.
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -112,14 +120,15 @@ int main()
 		int comparison_of_wanted_remainder_with_zero = mpz_cmp(wanted_remainder, remainder);
 		if(comparison_of_wanted_remainder_with_zero == 0)
 		{	//..........Writes factor to file.
-			out_stream.open("FACTOR");
+			out_stream.open("FACTOR", ios::app);
 			for(int a = 0; a < candidate_factor_digit_length; a++) {out_stream.put(candidate_factor[a]);}
+			out_stream << "\n";
 			out_stream.close();
 			
 			//..........Prints factor if 400 digits or less.
 			cout << "\n";
 			system("date");
-			cout << "Factored! Prime saved to file";
+			cout << "Done! Prime appended to file \"FACTOR\"";
 			if(candidate_factor_digit_length <= 400)
 			{	cout << ":\n\n";
 				for(int a = 0; a < candidate_factor_digit_length; a++) {cout << candidate_factor[a];}
