@@ -95,7 +95,7 @@ int main()
 	mpz_t wanted_remainder; mpz_init(wanted_remainder);
 	int zero = 0;
 	
-	mpz_set_si(wanted_remainder, zero);
+	mpz_set_si (wanted_remainder, zero );
 	mpz_set_str(dividend, semiprime, 10);
 	
 	int temp = (candidate_factor_digit_length - 1);
@@ -114,7 +114,7 @@ int main()
 		
 		//..........Mod operation.
 		mpz_set_str(divisor, candidate_factor, 10);
-		mpz_mod(remainder, dividend, divisor);
+		mpz_mod    (remainder, dividend, divisor );
 		
 		//..........Stops if remainder is zero.
 		int comparison_of_wanted_remainder_with_zero = mpz_cmp(wanted_remainder, remainder);
