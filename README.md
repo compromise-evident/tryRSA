@@ -6,7 +6,7 @@ commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp```
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_3efa9701225cdf16a4d3355fe645531f3dcda95d2bc5766d98ef9a5c6235f6d4.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_f85d6d0899f04a8861d2a3643c972e5f.png">
 </p>
 
 <br>
