@@ -46,7 +46,7 @@ String length = pq. If string end is at B, and if A & B are integer-apart, then 
 <br>
 <br>
 
-# The case for cryptanalysis through combinatoric correctness
+## The case for cryptanalysis through combinatoric correctness
 
 <p align="center">
   <img src="">
@@ -57,8 +57,7 @@ that is somewhere between 1 and 2^n inclusive where n
 is the number of total squares. And the index of this
 image WITHOUT artifacting can be incomprehensibly distant
 from the same image index WITH artifacting.
-The same can be said for differences in digit styles,
-colors, and legibility boundaries.
+The same can be said for differences in digit styles and legibility boundaries.
 
 Are there consistent and scalable relationships between
 similar images? Can these relationships help you jump to
