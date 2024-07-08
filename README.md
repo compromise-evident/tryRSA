@@ -49,7 +49,7 @@ String length = pq. If string end is at B, and if A & B are integer-apart, then 
 ## The case for cryptanalysis through combinatoric correctness
 
 <p align="center">
-  <img src="">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Combinatoric_correctness.png">
 </p>
 
 In combinatorics, this sample image has a name or index
