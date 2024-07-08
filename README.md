@@ -42,3 +42,38 @@ String length = pq. If string end is at B, and if A & B are integer-apart, then 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/String_folding_279cdc202129ed49fb5e4a27af50c18f5a1dc8af793d5d6dff7d3e0d8332155e.png">
 </p>
+
+<br>
+<br>
+
+# The case for cryptanalysis through combinatoric correctness
+
+<p align="center">
+  <img src="">
+</p>
+
+In combinatorics, this sample image has a name or index
+that is somewhere between 1 and 2^n inclusive where n
+is the number of total squares. And the index of this
+image WITHOUT artifacting can be incomprehensibly distant
+from the same image index WITH artifacting.
+The same can be said for differences in digit styles,
+colors, and legibility boundaries.
+
+Are there consistent and scalable relationships between
+similar images? Can these relationships help you jump to
+nearby similar images and group them together?
+If so, how would you manipulate the actual index values?
+And most importantly, how quickly can you find this
+sample image given only "493" as pixelated above?
+What if there's something about the sample correctness
+that makes it stand out... Can you find what it is
+or prove that it's nothing?
+
+Here's a quote by mathematician Leila Schneps
+on Grothendieck's example of Galios theory applied to relationships:
+"It's this idea that any simple picture, made of vertices and segments--
+whatever you can draw in this way--that there's a natural connection
+between each and every one of those drawings
+and an actual equation with coefficients
+that are algebraic numbers--and this is so weird."
