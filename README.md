@@ -109,3 +109,14 @@ Might 1 tested prime cluster say something about another untested?
 Can you prove it's impossible for whatever function in question?
 And most importantly, are extensions of this attack bound
 to any particular functions--extensions dependent on function particularities?
+
+<br>
+<br>
+
+# Lastly, consider navigating the curve
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Database_compromise_through_inference.png">
+</p>
+
+words here
