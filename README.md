@@ -113,7 +113,7 @@ to any particular functions--extensions dependent on function particularities?
 <br>
 <br>
 
-# Lastly, try navigating the curve near any pq
+# Lastly, try navigating such a curve near any pq
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/The_curve.png">
