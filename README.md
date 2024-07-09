@@ -71,8 +71,8 @@ or prove that it's nothing?
 
 Here's a quote by mathematician Leila Schneps
 on Grothendieck's example of Galios theory applied to relationships:
-"It's this idea that any simple picture, made of vertices and segments--
-whatever you can draw in this way--that there's a natural connection
+"It's this idea that any simple picture, made of vertices and segments--whatever
+you can draw in this way--that there's a natural connection
 between each and every one of those drawings
 and an actual equation with coefficients
 that are algebraic numbers--and this is so weird."
