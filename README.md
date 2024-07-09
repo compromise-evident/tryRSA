@@ -83,7 +83,7 @@ that are algebraic numbers--and this is so weird."
 # Database compromise through inference
 
 <p align="center">
-  <img src="">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Database_compromise_through_inference.png">
 </p>
 
 Dog owners are split by 2 categories of income.
