@@ -116,7 +116,7 @@ to any particular functions--extensions dependent on function particularities?
 # Lastly, consider navigating the curve
 
 <p align="center">
-  <img src="">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/The_curve.png">
 </p>
 
 words here
