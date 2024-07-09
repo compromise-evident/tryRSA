@@ -113,10 +113,11 @@ to any particular functions--extensions dependent on function particularities?
 <br>
 <br>
 
-# Lastly, consider navigating the curve
+# Lastly, try navigating the curve near any pq
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/The_curve.png">
 </p>
 
-words here
+* Green: pq = 493 = 17 x 29
+* Red: products close to but never 493
