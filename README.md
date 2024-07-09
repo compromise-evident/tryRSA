@@ -76,3 +76,36 @@ whatever you can draw in this way--that there's a natural connection
 between each and every one of those drawings
 and an actual equation with coefficients
 that are algebraic numbers--and this is so weird."
+
+<br>
+<br>
+
+# Database compromise through inference
+
+<p align="center">
+  <img src="">
+</p>
+
+Dog owners are split by 2 categories of income.
+Dog owners earning 200k don't play music,
+therefore your target makes 200k--a detail meant to sit
+confidential on the compiling server.
+
+Suppose you discover that some target of yours participated
+in this particular study. So far, you know they own a dog
+and don't play music, but you wish to know how much money they're making.
+In this example, you compromised the database and got what you wanted to know,
+by asking only 5 questions. This is possible even if
+the numbers are imperfect where you must then infer from
+quite a few new questions to ensure perfect sums.
+And there are heavily-researched, applied (US army,)
+and theoretical formulas which determine compromise for n questions,
+however, by fudging results, this can be made nearly impossible.
+
+The point is, you can extend this attack and try extracting
+what emerges from any other database such as a range of primes
+who failed to factor 1 or more semiprimes.
+Might 1 tested prime cluster say something about another untested?
+Can you prove it's impossible for whatever function in question?
+And most importantly, are extensions of this attack bound
+to any particular functions--extensions dependent on function particularities?
