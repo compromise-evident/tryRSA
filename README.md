@@ -121,3 +121,14 @@ to any particular functions--extensions dependent on function particularities?
 
 * Green: semiprime 493 = 17 x 29
 * Red: products close to but never 493, except for 1 x 493
+
+<br>
+<br>
+
+# Join the challenge
+
+https://en.wikipedia.org/wiki/RSA_Factoring_Challenge
+
+"The RSA numbers were generated on a computer with no network connection of any kind.
+The computer's hard drive was subsequently destroyed so that no record would exist,
+anywhere, of the solution to the factoring challenge."
