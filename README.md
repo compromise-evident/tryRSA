@@ -113,14 +113,11 @@ to any particular functions--extensions dependent on function particularities?
 <br>
 <br>
 
-# Lastly, try navigating such a curve near any pq
+# Semiprimes appear only twice in the curve
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/The_curve.png">
 </p>
-
-* Green: semiprime 493 = 17 x 29
-* Red: products close to but never 493, except for 1 x 493
 
 <br>
 <br>
