@@ -113,7 +113,7 @@ to any particular functions--extensions dependent on function particularities?
 <br>
 <br>
 
-# Semiprimes appear only twice in the curve
+# Semiprimes appear only twice in their curve
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/The_curve.png">
