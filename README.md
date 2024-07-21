@@ -140,4 +140,4 @@ anywhere, of the solution to the factoring challenge."
 `init_on_alloc` and `init_on_free` has hit most Linux distros and growing.
 Although a plus for security, tryRSA 2.0.1+ will no longer use RAM garbage for supplementing randomness.
 This means tryRSA instances can be duplicate jobs, unless all separated by 1 second start times.
-However, you may write a script to set `seed` to values between 0 and 4294967295 inclusive.
+However, you may write a script to set `seed` to a value between 0 and 4294967295 inclusive.
