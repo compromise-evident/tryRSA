@@ -136,6 +136,7 @@ anywhere, of the solution to the factoring challenge."
 # Multi-instance warning
 
 * Memory is zeroed when allocated and freed.
+* Candidate factor randomness is seeded from Unix time and no longer supplemented with RAM garbage.
 
 `init_on_alloc` and `init_on_free` has hit most Linux distros and growing.
 Although a plus for security, tryRSA 2.0.1+ will no longer use RAM garbage for supplementing randomness.
