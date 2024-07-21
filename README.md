@@ -135,10 +135,11 @@ anywhere, of the solution to the factoring challenge."
 
 # Multi-instance warning
 
-* Memory is zeroed when allocated and freed.
-* Candidate factor randomness is seeded from Unix time and no longer supplemented with RAM garbage.
+* Candidate factor randomness sprouts from Unix time and no longer supplemented with RAM garbage.
 
+RAM on Linux is now zeroed when allocated and freed; there's no more garbage.
 `init_on_alloc` and `init_on_free` has hit most Linux distros and growing.
-Although a plus for security, tryRSA 2.0.1+ will no longer use RAM garbage for supplementing randomness.
-This means tryRSA instances can be duplicate jobs, unless all separated by unique start times in seconds.
-However, you may write a script to set `seed` to a value between 0 and 4294967295 inclusive.
+Because Unix time is the only seed, tryRSA instances can be duplicate jobs,
+unless all separated by unique start times in seconds.
+However, you may write a script to set `seed` equal to a value between 0 and 4294967295 inclusive,
+for many separate tryRSA.cpp files.
