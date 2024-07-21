@@ -133,10 +133,10 @@ anywhere, of the solution to the factoring challenge."
 <br>
 <br>
 
-# Breaking news July 2024
+# Multi-instance warning
 
 * Memory is zeroed when allocated and freed.
 
 `init_on_alloc` and `init_on_free` has hit most Linux distros and growing.
-Although a plus for security, no more RAM garbage for supplementing randomness.
-I'll have to either replace or remove this feature here and in all my repos using rolling-code and related randomness supplement....
+Although a plus for security, tryRSA 2.0.1+ will no longer use RAM garbage for supplementing randomness.
+This means tryRSA instances can be duplicate jobs, unless all separated by 1 second start times.
