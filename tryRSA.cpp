@@ -1,9 +1,8 @@
-/// tryRSA - attempt factorization of 100-100k-digit semiprimes used in         Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
-///          cryptography. Curated for hands-free distributed effort;
-///          randomness sprouts from garbage RAM and Unix time.
+/// tryRSA - attempt factorization of 100-100k-digit                            Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+///          semiprimes used in cryptography.
 
 
-/* Version 2.0.0
+/* Version 2.0.1
 #########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
 #####'`                                                                  `'#####
 ###'                                                                        '###
@@ -19,25 +18,26 @@
 #include <gmp.h> //For GMP.
 #include <iostream>
 using namespace std;
-
 int main()
-{	//                               user knobs
-	
-	/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////
+{	/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  /////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    ////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\      ///////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\        //////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\            ////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\              ///////////////////////////////
-	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\                  /////////////////////////////
-	\\\\\\\\\\\\\\\\\\\\\\\\\\\                      ///////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\       your       /////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\       controls       ///////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
 	char semiprime[100001] = {"22112825529529666435281085255026230927612089502470015394413748319128822941402001986512729726569746599085900330031400051170742204560859276357953757185954298838958709229238491006703034124620545784566413664540684214361293017694020846391065875914794251435144458199"};
 	//You may replace this semiprime (RSA-260 challenge.)  Range: 3-100k digits.
-	//Try the 18-digit semiprime: 344542676882192473    = 392762459 × 877229147.
+	//Try the 16-digit semiprime: 4095075870816883        = 41904311 × 97724453.
+	
+	unsigned int seed = time(0);
+	//You may replace "time(0)" with the seed saved to a factoring party's file,
+	//and verify that factorization was indeed discovered using this tryRSA.cpp.
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
@@ -62,17 +62,8 @@ int main()
 	int candidate_factor_digit_length = (semiprime_digit_length / 2);
 	if((semiprime_digit_length % 2) == 1) {candidate_factor_digit_length++;}
 	
-	//Sets a seed based on RAM garbage and Unix time. (Good for duplicate-free multi-instance.)
-	unsigned int RAM_garbage[100000];
-	long long seed_based_on_RAM_garbage_and_Unix_time = time(0);
-	for(int a = 0; a < 100000; a++)
-	{	seed_based_on_RAM_garbage_and_Unix_time += RAM_garbage[a];
-		seed_based_on_RAM_garbage_and_Unix_time %= 4294967296;
-	}
-	unsigned int final_seed = seed_based_on_RAM_garbage_and_Unix_time;
-	srand(final_seed);
-	
 	//Creates a random candidate factor (to be modified automatically.)
+	srand(seed);
 	char candidate_factor[50001] = {'\0'};
 	for(int a = 0; a < candidate_factor_digit_length; a++)
 	{	candidate_factor[a] = (rand() % 10);
@@ -84,6 +75,7 @@ int main()
 	
 	
 	//Begins.
+	unsigned int start_time = time(0);
 	cout << "\n";
 	system("date");
 	cout << "Factoring " << semiprime_digit_length << "-digit semiprime."
@@ -122,19 +114,16 @@ int main()
 		{	//..........Writes factor to file.
 			out_stream.open("FACTOR", ios::app);
 			for(int a = 0; a < candidate_factor_digit_length; a++) {out_stream.put(candidate_factor[a]);}
-			out_stream << "\n";
+			unsigned int end_time = time(0);
+			out_stream << " (seed=" << seed << ", time=" << (end_time - start_time) << "s)\n";
 			out_stream.close();
 			
-			//..........Prints factor if 400 digits or less.
+			//..........Prints factor.
 			cout << "\n";
 			system("date");
-			cout << "Done! Prime appended to file \"FACTOR\"";
-			if(candidate_factor_digit_length <= 400)
-			{	cout << ":\n\n";
-				for(int a = 0; a < candidate_factor_digit_length; a++) {cout << candidate_factor[a];}
-			}
-			else {cout << ".\n\n";}
-			
+			cout << "Done! Prime appended to file \"FACTOR\":\n\n";
+			for(int a = 0; a < candidate_factor_digit_length; a++) {cout << candidate_factor[a];}
+			cout << "\n\n";
 			return 0;
 		}
 	}
