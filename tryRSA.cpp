@@ -35,7 +35,7 @@ int main()
 	//You may replace this semiprime (RSA-260 challenge.)  Range: 3-100k digits.
 	//Try the 16-digit semiprime: 4095075870816883        = 41904311 × 97724453.
 	
-	unsigned int seed = time(0);
+	unsigned int seed = time(0); //Replace "time(0)" with 0 to 4294967295.
 	//You may replace "time(0)" with the seed saved to a factoring party's file,
 	//and verify that factorization was indeed discovered using this tryRSA.cpp.
 	
