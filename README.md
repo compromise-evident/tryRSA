@@ -14,7 +14,7 @@ commands in Geany, or then compile using ```g++ /path_to_this.cpp -lgmp```
 
 # Semiprimes have perfect-secrecy-like nature
 
-Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp#L33)
+Play with [RSA_difficulty_demo.cpp](https://github.com/compromise-evident/tryRSA/blob/main/Other/Factorization_theory/RSA_difficulty_demo.cpp#L28)
 as it prints which two numbers multiplied recreate n last digits of your semiprime.
 Increase the number of semiprime digits you want recreated. Listed p*q
 are the plausible ending digits of the factors.
