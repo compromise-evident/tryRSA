@@ -2,7 +2,6 @@
 Increase the number of semiprime digits you want recreated.  Listed p*q are the
 plausible ending digits of the factors.  Modify semiprime ending digits as well.
 
-
 It seems impossible to know any semiprime factor digit, unless you have a factor
 whole.  You cannot eliminate  any factor (plaus)ibilities because  multiplicands
 and multipliers listed are simply all numbers ending in 1, 3, 7, 9. For example,
@@ -10,22 +9,18 @@ given the last few digits of semiprime pq,  primes p are listed as every integer
 1+ but ending in 1, 3, 7, & 9  (as primes should, other than 2 & 5.) Now, for q,
 the same exact numbers are listed as multipliers for p, in a different order. */
 
-
 #include <iostream>
 using namespace std;
-
 int main()
-{	//                               user knobs
-	
-	/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////
+{	/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  /////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    ////////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\      ///////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\        //////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\            ////////////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\              ///////////////////////////////
-	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\                  /////////////////////////////
-	\\\\\\\\\\\\\\\\\\\\\\\\\\\                      ///////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\       your       /////////////////////////////
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\       controls       ///////////////////////////
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
