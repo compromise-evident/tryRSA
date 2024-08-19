@@ -1,5 +1,6 @@
-/// tryRSA - attempt factorization of 100-100k-digit                            Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
-///          semiprimes used in cryptography.
+/// tryRSA - attempt factorization of 100-100k-digit semiprimes                 Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+///          used in cryptography (currently set to factor
+///          the next unsolved RSA-260 challenge.)
 
 
 /* Version 2.0.1
@@ -15,7 +16,7 @@
 ##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#######*/
 
 #include <fstream>
-#include <gmp.h> //For GMP.
+#include <gmp.h>
 #include <iostream>
 using namespace std;
 int main()
