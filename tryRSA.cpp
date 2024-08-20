@@ -1,18 +1,8 @@
-/// tryRSA - attempt factorization of semiprimes up to 100k digits long.        Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
+/// tryRSA - attempt factorization of semiprimes up to 100k digits long.        Run it: "apt install g++ geany libgmp-dev". Append "-lgmp" to Geany's compile & build
+///                                                                             commands. Open this in Geany. Hit F9 once. F5 to run. Or compile: g++ /this.cpp -lgmp
 
 
-/* Version 2.0.2
-#########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
-#####'`                                                                  `'#####
-###'                                                                        '###
-##         You'll need the GNU Multiple Precision Arithmetic Library.         ##
-#,                                                                            ,#
-#'       Do apt install libgmp-dev then append "-lgmp" to both compile &      '#
-##        build commands. Or then compile: g++ /path_to_this.cpp -lgmp        ##
-###,                                                                        ,###
-#####,.                                                                  .,#####
-##########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#######*/
-
+// Version 2.0.2
 #include <fstream>
 #include <gmp.h>
 #include <iostream>
@@ -76,8 +66,8 @@ int main()
 	mpz_t divisor         ; mpz_init(divisor         );
 	mpz_t remainder       ; mpz_init(remainder       );
 	mpz_t wanted_remainder; mpz_init(wanted_remainder);
-	int zero = 0;
 	
+	int zero = 0;
 	mpz_set_si (wanted_remainder, zero );
 	mpz_set_str(dividend, semiprime, 10);
 	
