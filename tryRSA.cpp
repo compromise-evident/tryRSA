@@ -1,9 +1,7 @@
-/// tryRSA - attempt factorization of 100-100k-digit semiprimes                 Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
-///          used in cryptography (currently set to factor
-///          the next unsolved RSA-260 challenge.)
+/// tryRSA - attempt factorization of semiprimes up to 100k digits long.        Run it: "apt install g++ geany". Open this in Geany. Hit F9 once. F5 to run.
 
 
-/* Version 2.0.1
+/* Version 2.0.2
 #########*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*##########
 #####'`                                                                  `'#####
 ###'                                                                        '###
@@ -32,9 +30,12 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
+	//Default configuration is for factoring the next unsolved RSA-260 challenge.
+	
 	char semiprime[100001] = {"22112825529529666435281085255026230927612089502470015394413748319128822941402001986512729726569746599085900330031400051170742204560859276357953757185954298838958709229238491006703034124620545784566413664540684214361293017694020846391065875914794251435144458199"};
-	//You may replace this semiprime (RSA-260 challenge.)  Range: 3-100k digits.
-	//Try the 16-digit semiprime: 4095075870816883        = 41904311 × 97724453.
+	//Try the 16-digit semiprime: 4095075870816883 = 41904311 × 97724453 but set candidate_factor_digit_length to 8.
+	
+	int candidate_factor_digit_length = 130;
 	
 	unsigned int seed = time(0); //Replace "time(0)" with 0 to 4294967295.
 	//You may replace "time(0)" with the seed saved to a factoring party's file,
@@ -54,29 +55,17 @@ int main()
 	
 	ofstream out_stream;
 	
-	//Finds semiprime digit length.
+	//Gets ready.
+	//..........Finds semiprime digit length.
 	int semiprime_digit_length = 0;
 	for(int a = 0; semiprime[a] != '\0'; a++) {semiprime_digit_length++;}
 	
-	//Sets appropriate digit length of candidate factor. (If semiprime
-	//length is even, then half. If semiprime length is odd, then half + 0.5)
-	int candidate_factor_digit_length = (semiprime_digit_length / 2);
-	if((semiprime_digit_length % 2) == 1) {candidate_factor_digit_length++;}
-	
-	//Creates a random candidate factor (to be modified automatically.)
+	//..........Creates a random candidate factor (to be modified automatically.)
 	srand(seed);
 	char candidate_factor[50001] = {'\0'};
-	for(int a = 0; a < candidate_factor_digit_length; a++)
-	{	candidate_factor[a] = (rand() % 10);
-		candidate_factor[a] += 48;
-	}
+	for(int a = 0; a < candidate_factor_digit_length; a++) {candidate_factor[a] = ((rand() % 10) + 48);}
 	
-	
-	
-	
-	
-	//Begins.
-	unsigned int start_time = time(0);
+	//..........Init.
 	cout << "\n";
 	system("date");
 	cout << "Factoring " << semiprime_digit_length << "-digit semiprime."
@@ -91,6 +80,12 @@ int main()
 	mpz_set_si (wanted_remainder, zero );
 	mpz_set_str(dividend, semiprime, 10);
 	
+	
+	
+	
+	
+	//Begins.
+	unsigned int start_time = time(0);
 	int temp = (candidate_factor_digit_length - 1);
 	for(;;)
 	{	//..........Modifies candidate_factor and ensures it does not begin with 0, and that it ends in 1, 3, 7, or 9.
