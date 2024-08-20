@@ -30,8 +30,6 @@ int main()
 	\\\\\\\\\\\\\\\\\\\\\\\                              ///////////////////////
 	\\\\\\\\\\\\\\\\\\                                        ////////////////*/
 	
-	//Default configuration is for factoring the next unsolved RSA-260 challenge.
-	
 	char semiprime[100001] = {"22112825529529666435281085255026230927612089502470015394413748319128822941402001986512729726569746599085900330031400051170742204560859276357953757185954298838958709229238491006703034124620545784566413664540684214361293017694020846391065875914794251435144458199"};
 	//Try the 16-digit semiprime: 4095075870816883 = 41904311 × 97724453 but set candidate_factor_digit_length to 8.
 	
@@ -40,6 +38,9 @@ int main()
 	unsigned int seed = time(0); //Replace "time(0)" with 0 to 4294967295.
 	//You may replace "time(0)" with the seed saved to a factoring party's file,
 	//and verify that factorization was indeed discovered using this tryRSA.cpp.
+	
+	//Default configuration is for factoring
+	//the next unsolved RSA-260 challenge.
 	
 	/*////////////////                                        \\\\\\\\\\\\\\\\\\
 	///////////////////////                              \\\\\\\\\\\\\\\\\\\\\\\
