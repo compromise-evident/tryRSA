@@ -2,6 +2,9 @@ tryRSA
 
 
 
+Version 2.0.2   Variable factor digit length  (which you must set  for each pq.)
+                Aug 19 2024
+
 Version 2.0.1   Randomness is now seeded from Unix time only;  had to remove RAM
                 garbage as randomness supplement due to  Linux now  zeroing  RAM
                 before allocating  it to a process,  and zeroing that  RAM after
