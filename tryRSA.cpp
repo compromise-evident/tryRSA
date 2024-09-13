@@ -1,5 +1,5 @@
-/// tryRSA - attempt factorization of semiprimes up to 100k digits long.        Run it: "apt install g++ geany libgmp-dev". Append "-lgmp" to Geany's compile & build
-///                                                                             commands. Open this in Geany. Hit F9 once. F5 to run. Or compile: g++ /this.cpp -lgmp
+/// tryRSA - attempt factorization of semiprimes up to 100k digits long.        Run it: "apt install g++ geany libgmp-dev". Open the .cpp in Geany.
+///                                                                             Append "-lgmp" to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 
 // Version 2.0.2
