@@ -1,9 +1,6 @@
 Run it: ```apt install g++ geany libgmp-dev```. Open the .cpp in Geany.<br>
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
-<br>
-<br>
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_f85d6d0899f04a8861d2a3643c972e5f.png">
 </p>
