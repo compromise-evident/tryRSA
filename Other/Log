@@ -2,6 +2,10 @@ tryRSA
 
 
 
+Version 3.0.0   You can now provide known first digits of a factor. This is prep
+                for a special ML trained on TD from semiprime-training-data.cpp.
+                Dec 3 2024
+
 Version 2.0.2   Variable factor digit length  (which you must set  for each pq.)
                 Aug 19 2024
 
