@@ -2,7 +2,7 @@ Run it: ```apt install g++ geany libgmp-dev```. Open the .cpp in Geany.<br>
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Terminal_f85d6d0899f04a8861d2a3643c972e5f.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/refs/heads/main/Other/Terminal_6678cd93713ea9452261edb38cbc7cff.png">
 </p>
 
 <br>
@@ -125,17 +125,3 @@ https://en.wikipedia.org/wiki/RSA_Factoring_Challenge
 "The RSA numbers were generated on a computer with no network connection of any kind.
 The computer's hard drive was subsequently destroyed so that no record would exist,
 anywhere, of the solution to the factoring challenge."
-
-<br>
-<br>
-
-# Multi-instance warning
-
-* Candidate factor randomness sprouts from Unix time and no longer supplemented with RAM garbage.
-
-RAM on Linux is now zeroed when allocated and freed; there's no more garbage.
-`init_on_alloc` and `init_on_free` has hit most Linux distros and growing.
-Because Unix time is the only seed, tryRSA instances can be duplicate jobs,
-unless all separated by unique start times in seconds.
-However, you may write a script to set `seed` equal to a value between 0 and 4294967295 inclusive,
-for many separate tryRSA.cpp files.
