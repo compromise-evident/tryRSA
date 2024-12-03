@@ -40,7 +40,7 @@ int main()
 	ofstream out_stream;
 	
 	srand(time(0));
-	int semiprime_digit_length = 0; for(int a = 0;                        semiprime[a] != '\0'; a++) {semiprime_digit_length++;}
+	int semiprime_digit_length = 0; for(int a = 0;                      semiprime[a] != '\0'; a++) {semiprime_digit_length++;}
 	int known_digits_length    = 0; for(int a = 0; known_first_digits_of_a_factor[a] != '\0'; a++) {known_digits_length   ++;}
 	char candidate_factor[50001] = {'\0'};
 	for(int a = 0; a < known_digits_length; a++) {candidate_factor[a] = known_first_digits_of_a_factor[a];}
