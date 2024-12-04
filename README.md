@@ -96,7 +96,7 @@ the numbers are imperfect where you must then infer from
 quite a few new questions to ensure perfect sums.
 And there are heavily-researched, applied (US army,)
 and theoretical formulas which determine compromise for n questions,
-however, by fudging results, this can be made nearly impossible.
+however, by insignificantly fudging results, compromise can be made nearly impossible, while the study remains useful.
 
 The point is, you can extend this attack and try extracting
 what emerges from any other database such as a range of primes
