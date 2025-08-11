@@ -2,7 +2,7 @@ Run it: ```apt install g++ geany libgmp-dev```. Open the .cpp in Geany.<br>
 Append ```-lgmp``` to Geany's compile & build commands. Hit F9 once. F5 to run.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/refs/heads/main/Other/Terminal_6678cd93713ea9452261edb38cbc7cff.png">
+  <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/refs/heads/main/Other/Terminal.png">
 </p>
 
 <br>
