@@ -125,3 +125,12 @@ https://en.wikipedia.org/wiki/RSA_Factoring_Challenge
 "The RSA numbers were generated on a computer with no network connection of any kind.
 The computer's hard drive was subsequently destroyed so that no record would exist,
 anywhere, of the solution to the factoring challenge."
+
+<br>
+<br>
+
+# Generate raw numbers and take a look
+
+https://github.com/compromise-evident/WhatNot/blob/main/semiprime_training-data.cpp
+
+https://github.com/compromise-evident/WhatNot/blob/main/prime_training-data.cpp
