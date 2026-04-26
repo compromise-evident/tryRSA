@@ -76,7 +76,7 @@ that are algebraic numbers--and this is so weird."
 <br>
 <br>
 
-# Database compromise through inference
+## The case for cryptanalysis through inferential database compromise
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/compromise-evident/tryRSA/main/Other/Factorization_theory/Database_compromise_through_inference.png">
@@ -86,6 +86,7 @@ Dog owners are split by 2 categories of income.
 Dog owners earning 200k don't play music,
 therefore your target makes 200k--a detail meant to sit
 confidential on the compiling server.
+This is database compromise through inference.
 
 Suppose you discover that some target of yours participated
 in this particular study. So far, you know they own a dog
